@@ -14,13 +14,13 @@ class MoviesController < ApplicationController
   #end
   def index
     movies = Movie.where("english = ?", true)
-    render json: movies.as_json
+    render json: movies
   end
 
   def show
     movie_id = params[:id]
     movie = Movie.find(movie_id)
-    render json: movie.as_json
+    render json: movie
   end
 
   def create
